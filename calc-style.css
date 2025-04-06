@@ -1,0 +1,121 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 300px;
+    height: 500px;
+    margin: 50px;
+}
+
+button {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+#main-window {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(61, 61, 61);
+    border-radius: 15px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 500px;
+    background: rgb(44, 42, 44);
+}
+
+#display-window {
+    border: 3px solid black;
+    padding: 10px;
+    padding-left: 10px;
+    padding-top: 40px;
+    width: auto;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    background: rgb(227, 233, 243);
+    text-align: end;
+    flex-shrink: 0;
+    flex-grow: 0;
+    
+}
+
+#keypad {
+    display: flex;
+    border-top: 0px;
+    padding-top: 3px;
+    padding-bottom: 10px;
+}
+
+.number-pad {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+    height: 320px;
+    justify-content: flex-end;
+    padding: 10px;
+    padding-left: 15px;
+}
+
+.number-pad button, .zero-button {
+    height: 50px;
+    width: 50px;
+    border-radius: 20px;
+    color: rgb(28, 30, 153);
+    background: rgb(189, 211, 250);
+    
+}
+
+.number-pad .zero-button {
+    height: 50px;
+    width: 110px;
+    flex-shrink: 0;
+}
+
+.number-group {
+    display: flex;
+    gap: 10px;
+}
+
+.calc-text {
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.number-pad .func-button {
+    background: rgb(228, 170, 62);
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+.number-pad .c-button, .number-pad .eq-button {
+    background: rgb(253, 252, 249);
+    width: 80px;
+    flex-shrink: 1;
+}
+
+.eq-button {
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+.calc-name {
+    color: rgb(104, 100, 100);
+    font-size: 30px;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+    font-family: "Sofia", sans-serif;
+}
+
+.number-pad .blank-button {
+    border: none;
+    background: none;
+}

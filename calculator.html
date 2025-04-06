@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calc-style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <script src="calcJs.js" defer></script>
+</head>
+<body>
+    <div id="main-window">
+        <div id="display-window">
+            <p id="input" class="calc-text"></p>
+            <p id="result"></p>
+        </div>
+        <p class="calc-name">Calculator</p>
+        <div id="keypad">
+            <div class="number-pad">
+                <div class="number-group">
+                    <button id="btn14" class="c-button">C</button>
+                    <button id="btn15" onclick="" class="c-button">CE</button>
+                    
+                    <button id="btn10" onclick="btnDetect(10)" class="func-button">+</button>
+                </div>
+                <div class="number-group">
+                    <button id="btn7" onclick="btnDetect(7)">7</button>
+                    <button id="btn8" onclick="btnDetect(8)">8</button>
+                    <button id="btn9" onclick="btnDetect(9)">9</button>
+                    <button id="btn11" onclick="btnDetect(11)" class="func-button">-</button>
+                </div>
+                <div class="number-group">
+                    <button id="btn4" onclick="btnDetect(4)">4</button>
+                    <button id="btn5" onclick="btnDetect(5)">5</button>
+                    <button id="6btn" onclick="btnDetect(6)">6</button>
+                    <button id="btn12" onclick="btnDetect(12)" class="func-button">*</button>
+                </div>
+                <div class="number-group">
+                    <button id="btn1" onclick="btnDetect(1)">1</button>
+                    <button id="btn2" onclick="btnDetect(2)">2</button>
+                    <button id="btn3" onclick="btnDetect(3)">3</button>
+                    <button id="btn13" onclick="btnDetect(13)" class="func-button">/</button>
+                </div>
+                <div class="number-group">
+                    <button id="btn0" onclick="btnDetect(0)" class="zero-button">0</button>
+                    <button id="btn16" onclick="operate()" class="eq-button">=</button>
+                </div>
+                </div>
+        </div>
+    </div>
+
+<!-- DO NOT ADD ANYTHING BELOW THIS-->
+    
+</body>
+</html>
