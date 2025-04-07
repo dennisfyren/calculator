@@ -1,36 +1,96 @@
-let currentValue;
-let lastValue;
-let currentOp;
-let currentClick;
 let displayValue = '';
+let currentCalc = 0;
+let calcOutput = [];
+calcOutput[0] = '';
+let output = 0;
+const nums = [];
+nums[0] = '';
+nums[1] = '';
+
+function btnDetect (buttonClick) { 
+   nums[0] = nums[0] + buttonClick; 
+   console.log(nums)
+    displayValue = nums[0];
+    document.querySelector("#result").textContent = displayValue;
+    document.querySelector('#input').textContent = nums[1] + ' ' + calcOutput[0];
+};
 
 const btnC = document.querySelector("#btn14");
 btnC.addEventListener("click", () => {
     document.querySelector("#result").textContent = '';
+    document.querySelector("#input").textContent = '';
     displayValue = '';
+    nums[0] = '';
+    nums[1] = '';
+    calcOutput[0] = 0;
 });
 
 const btnCe = document.querySelector("#btn15")
 btnCe.addEventListener("click", () => {
-    let inputTemp = displayValue.length;
     displayValue = displayValue.slice(0, -1);
+    nums[0] = nums[0].slice(0, -1);
     document.querySelector("#result").textContent = displayValue;
-    console.log(displayValue);
 });
 
-function operate() {
-    return lastvalue + currentOp + currentValue;
+function add(){
+    currentCalc = 1;
+    calcOutput[0] = ' +'
+    displayValue = nums[0] + ' +'
+    document.querySelector("#result").textContent = displayValue;
+    nums[1] = nums[0];
+    nums[0] = '';
 };
 
-function btnDetect (buttonClick) {
-    currentValue = buttonClick
-    displayValue = displayValue +`${buttonClick}`;
+function subtract() {
+    currentCalc = 2;
+    calcOutput[0] = ' -'
+    displayValue = nums[0] + ' -'
     document.querySelector("#result").textContent = displayValue;
+    nums[1] = nums[0];
+    nums[0] = '';
 };
+
+function multiply() {
+    currentCalc = 3;
+    calcOutput[0] = ' *'
+    displayValue = nums[0] + ' *'
+    document.querySelector("#result").textContent = displayValue;
+    nums[1] = nums[0];
+    nums[0] = '';
+};
+function divide() {
+    currentCalc = 4;
+    calcOutput[0] = ' /'
+    displayValue = nums[0] + ' /'
+    document.querySelector("#result").textContent = displayValue;
+    nums[1] = nums[0];
+    nums[0] = '';
+};
+
+function operate() {
+    let result;
+    if (currentCalc === 1){
+        result = nums.map(Number).reduce((a, b) => (a + b)); 
+        console.log(result);
+    } else if (currentCalc === 2){
+        result = nums.map(Number).reduce((a, b) => (b - a)); 
+        console.log(result);
+    } else if (currentCalc === 3){
+        result = nums.map(Number).reduce((a, b) => (b * a)); 
+        console.log(result);
+    } else if (currentCalc === 4){
+        result = nums.map(Number).reduce((a, b) => (b / a)); 
+        console.log(result);
+    }
+    document.querySelector("#result").textContent = result;
+    nums[0] = result;
+    calcOutput[0] = 0;
+    document.querySelector("#input").textContent = '';
+};
+
 
 function clear() {
     document.querySelector("#result").textContent = '';
-    console.log("hi")
 }
 
 

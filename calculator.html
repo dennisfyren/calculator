@@ -12,7 +12,7 @@
     <div id="main-window">
         <div id="display-window">
             <p id="input" class="calc-text"></p>
-            <p id="result"></p>
+            <p id="result" class="result-text"></p>
         </div>
         <p class="calc-name">Calculator</p>
         <div id="keypad">
@@ -21,25 +21,25 @@
                     <button id="btn14" class="c-button">C</button>
                     <button id="btn15" onclick="" class="c-button">CE</button>
                     
-                    <button id="btn10" onclick="btnDetect(10)" class="func-button">+</button>
+                    <button id="btn10" onclick="add()" class="func-button">+</button>
                 </div>
                 <div class="number-group">
                     <button id="btn7" onclick="btnDetect(7)">7</button>
                     <button id="btn8" onclick="btnDetect(8)">8</button>
                     <button id="btn9" onclick="btnDetect(9)">9</button>
-                    <button id="btn11" onclick="btnDetect(11)" class="func-button">-</button>
+                    <button id="btn11" onclick="subtract()" class="func-button">-</button>
                 </div>
                 <div class="number-group">
                     <button id="btn4" onclick="btnDetect(4)">4</button>
                     <button id="btn5" onclick="btnDetect(5)">5</button>
                     <button id="6btn" onclick="btnDetect(6)">6</button>
-                    <button id="btn12" onclick="btnDetect(12)" class="func-button">*</button>
+                    <button id="btn12" onclick="multiply()" class="func-button">*</button>
                 </div>
                 <div class="number-group">
-                    <button id="btn1" onclick="btnDetect(1)">1</button>
-                    <button id="btn2" onclick="btnDetect(2)">2</button>
-                    <button id="btn3" onclick="btnDetect(3)">3</button>
-                    <button id="btn13" onclick="btnDetect(13)" class="func-button">/</button>
+                    <button id="btn1" onclick="btnDetect('1')">1</button>
+                    <button id="btn2" onclick="btnDetect('2')">2</button>
+                    <button id="btn3" onclick="btnDetect('3')">3</button>
+                    <button id="btn13" onclick="divide()" class="func-button">/</button>
                 </div>
                 <div class="number-group">
                     <button id="btn0" onclick="btnDetect(0)" class="zero-button">0</button>

@@ -31,7 +31,8 @@ button {
     border: 3px solid black;
     padding: 10px;
     padding-left: 10px;
-    padding-top: 40px;
+    padding-top: 0px;
+    padding-bottom: 5px;
     width: auto;
     height: 100px;
     margin-top: 10px;
@@ -83,10 +84,17 @@ button {
     gap: 10px;
 }
 
-.calc-text {
-    margin-bottom: 15px;
+.calc-text, .result-text {
+    margin-bottom: 0px;
+    padding-top: 15px;
     font-size: 13px;
     font-weight: 400;
+    font-size: 2em;
+    height: 50px;
+}
+
+.result-text {
+    padding-top: 5px;
 }
 
 .number-pad .func-button {
