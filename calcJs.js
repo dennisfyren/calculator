@@ -15,6 +15,10 @@ function btnDetect (buttonClick) {
     document.querySelector('#input').textContent = nums[1] + ' ' + calcOutput[0];
 };
 
+function addComma(){
+    console.log("Fix this pls.")
+}
+
 const btnC = document.querySelector("#btn14");
 btnC.addEventListener("click", () => {
     document.querySelector("#result").textContent = '';
@@ -22,7 +26,7 @@ btnC.addEventListener("click", () => {
     displayValue = '';
     nums[0] = '';
     nums[1] = '';
-    calcOutput[0] = 0;
+    calcOutput[0] = '';
 });
 
 const btnCe = document.querySelector("#btn15")
@@ -30,6 +34,7 @@ btnCe.addEventListener("click", () => {
     displayValue = displayValue.slice(0, -1);
     nums[0] = nums[0].slice(0, -1);
     document.querySelector("#result").textContent = displayValue;
+    console.log(nums)
 });
 
 function add(){
@@ -91,6 +96,9 @@ function operate() {
 
 function clear() {
     document.querySelector("#result").textContent = '';
+    nums[0] = '';
+    nums[1] = '';
+    calcOutput[0] = '';
 }
 
 
