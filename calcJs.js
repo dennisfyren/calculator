@@ -13,7 +13,6 @@ function btnDetect (buttonClick) {
     }
     calcOutput[9] = 0; //Reset flag after first input.
     nums[0] = nums[0] + buttonClick; 
-    console.log(nums)
     displayValue = nums[0];
     document.querySelector("#result").textContent = displayValue;
     document.querySelector('#input').textContent = nums[1] + ' ' + calcOutput[0];
@@ -24,7 +23,6 @@ function addComma(){
     displayValue = nums[0];
     document.querySelector("#result").textContent = displayValue;
     document.querySelector('#input').textContent = nums[1] + ' ' + calcOutput[0];
-    console.log(nums);
 }
 
 const btnC = document.querySelector("#btn14");
@@ -43,7 +41,6 @@ btnCe.addEventListener("click", () => {
     displayValue = displayValue.slice(0, -1);
     nums[0] = nums[0].slice(0, -1);
     document.querySelector("#result").textContent = displayValue;
-    console.log(nums)
 });
 
 function add(){
@@ -102,16 +99,12 @@ function operate() {
     let result;
     if (currentCalc === 1){
         result = Math.round(nums.map(Number).reduce((a, b) => (a + b)) * 100) / 100; 
-        console.log(result);
     } else if (currentCalc === 2){
         result = Math.round(nums.map(Number).reduce((a, b) => (b - a)) * 100) / 100; 
-        console.log(result);
     } else if (currentCalc === 3){
         result = Math.round(nums.map(Number).reduce((a, b) => (b * a)) * 100) / 100; 
-        console.log(result);
     } else if (currentCalc === 4){
         result = Math.round(nums.map(Number).reduce((a, b) => (b / a)) * 100) / 100; 
-        console.log(result);
     }
     document.querySelector("#result").textContent = result;
     nums[0] = result;
