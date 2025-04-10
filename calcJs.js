@@ -19,6 +19,13 @@ function btnDetect (buttonClick) {
 };
 
 function addComma(){
+    if (calcOutput[9] === 1){ //Checks if calculations should be removed or not.
+        clear()
+    }
+    calcOutput[9] = 0; //Reset flag after first input.
+    if (nums[0] === '') {
+        nums[0] = 0;
+    }
     nums[0] = nums[0] + '.';
     displayValue = nums[0];
     document.querySelector("#result").textContent = displayValue;
