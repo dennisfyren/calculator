@@ -19,12 +19,12 @@ button {
 #main-window {
     display: flex;
     flex-direction: column;
-    border: 2px solid rgb(61, 61, 61);
+    border: 3px solid rgb(34, 34, 34);
     border-radius: 15px;
     flex-grow: 0;
     flex-shrink: 0;
     height: 500px;
-    background: rgb(44, 42, 44);
+    background: rgb(34, 34, 34);
 }
 
 #display-window {
@@ -39,11 +39,11 @@ button {
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 5px;
-    background: rgb(227, 233, 243);
+    background: rgb(0, 0, 0);
     text-align: end;
     flex-shrink: 0;
     flex-grow: 0;
-    
+    color: white;
 }
 
 #keypad {
@@ -57,25 +57,24 @@ button {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 5px;
-    height: 320px;
-    justify-content: flex-end;
+    height: 370px;
+    justify-content: center;
     padding: 10px;
-    padding-left: 15px;
+    padding-left: 12px;
 }
 
 .number-pad button, .zero-button {
-    height: 50px;
-    width: 50px;
-    border-radius: 20px;
-    color: rgb(28, 30, 153);
-    background: rgb(181, 242, 253);
-    
+    height: 60px;
+    width: 60px;
+    border-radius: 0px;
+    border: none;
+    color: rgb(211, 211, 211);
+    background: rgba(82, 82, 82, 0.205);  
 }
 
 .number-pad .zero-button {
-    height: 50px;
-    width: 80px;
+    height: 60px;
+    width: 95px;
     flex-shrink: 0;
 }
 
@@ -98,14 +97,15 @@ button {
 }
 
 .number-pad .func-button {
-    background: rgb(250, 203, 117);
+    background: rgb(255, 202, 103);
     margin-left: 0px;
     margin-right: auto;
+    color: rgb(63, 63, 63);;
 }
 
 .number-pad .c-button, .number-pad .eq-button {
-    background: rgb(229, 255, 255);
-    width: 80px;
+    background: rgb(0, 48, 41);
+    width: 95px;
     flex-shrink: 1;
 }
 
@@ -126,4 +126,11 @@ button {
 .number-pad .blank-button {
     border: none;
     background: none;
+}
+
+.number-group button:hover {
+    background: rgb(73, 73, 73);
+}
+.number-pad .func-button:hover {
+    background: rgb(250, 142, 2);
 }
