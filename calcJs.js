@@ -7,7 +7,7 @@ const nums = [];
 nums[0] = '';
 nums[1] = '';
 
-function btnDetect (buttonClick) { 
+function btnDetect (buttonClick) {
    nums[0] = nums[0] + buttonClick; 
    console.log(nums)
     displayValue = nums[0];
@@ -16,7 +16,11 @@ function btnDetect (buttonClick) {
 };
 
 function addComma(){
-    console.log("Fix this pls.")
+    nums[0] = nums[0] + '.';
+    displayValue = nums[0];
+    document.querySelector("#result").textContent = displayValue;
+    document.querySelector('#input').textContent = nums[1] + ' ' + calcOutput[0];
+    console.log(nums);
 }
 
 const btnC = document.querySelector("#btn14");
@@ -38,6 +42,9 @@ btnCe.addEventListener("click", () => {
 });
 
 function add(){
+    if (currentCalc !== 0) {
+        operate();
+    }
     currentCalc = 1;
     calcOutput[0] = ' +'
     displayValue = nums[0] + ' +'
@@ -47,6 +54,9 @@ function add(){
 };
 
 function subtract() {
+    if (currentCalc !== 0) {
+        operate();
+    }
     currentCalc = 2;
     calcOutput[0] = ' -'
     displayValue = nums[0] + ' -'
@@ -56,6 +66,9 @@ function subtract() {
 };
 
 function multiply() {
+    if (currentCalc !== 0) {
+        operate();
+    }
     currentCalc = 3;
     calcOutput[0] = ' *'
     displayValue = nums[0] + ' *'
@@ -64,6 +77,9 @@ function multiply() {
     nums[0] = '';
 };
 function divide() {
+    if (currentCalc !== 0) {
+        operate();
+    }
     currentCalc = 4;
     calcOutput[0] = ' /'
     displayValue = nums[0] + ' /'
@@ -75,21 +91,22 @@ function divide() {
 function operate() {
     let result;
     if (currentCalc === 1){
-        result = nums.map(Number).reduce((a, b) => (a + b)); 
+        result = Math.round(nums.map(Number).reduce((a, b) => (a + b)) * 100) / 100; 
         console.log(result);
     } else if (currentCalc === 2){
-        result = nums.map(Number).reduce((a, b) => (b - a)); 
+        result = Math.round(nums.map(Number).reduce((a, b) => (b - a)) * 100) / 100; 
         console.log(result);
     } else if (currentCalc === 3){
-        result = nums.map(Number).reduce((a, b) => (b * a)); 
+        result = Math.round(nums.map(Number).reduce((a, b) => (b * a)) * 100) / 100; 
         console.log(result);
     } else if (currentCalc === 4){
-        result = nums.map(Number).reduce((a, b) => (b / a)); 
+        result = Math.round(nums.map(Number).reduce((a, b) => (b / a)) * 100) / 100; 
         console.log(result);
     }
     document.querySelector("#result").textContent = result;
     nums[0] = result;
     calcOutput[0] = 0;
+    currentCalc = 0;
     document.querySelector("#input").textContent = '';
 };
 
